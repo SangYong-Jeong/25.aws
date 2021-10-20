@@ -159,8 +159,28 @@ sudo mysql -uroot -p
 
 -- 외부에서 접근할 사용자 만들기
 use mysql
-GRANT all privileges ON *.* TO '사용자이름'@'%' identified by '패스워드'
+GRANT all privileges ON *.* TO 'leo'@'%' identified by '패스워드'
 
 flush privileges;
 ```
+
+## MySQL 데이터베이스 설정
+```sql
+-- book database 생성
+create database book;
+
+-- book에 접근할 book사용자 생성
+GRANT privileges ON book.* TO 'book'@'%' identified by '패스워드';
+```
+
 ## MySQL(MariaDB) 외부접속허용
+```bash
+# mysql 환경설정파일 열기
+sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# vi - 아래처럼 주석처리 할것 - 주석처리 하면 외부에서도 나의 DB에 접근 가능함.
+# bind-address = 127.0.0.1
+
+# MySQL 재시작
+sudo service mysql restart
+```
