@@ -29,6 +29,7 @@
 ```bash
 # bash창을 열고
 cd key
+# 사용자 root 에서 .ssh 폴더에서 known_hosts 파일 삭제하고 접속해야함 캐시 남아있음!
 ssh -i default.pem ubuntu@xxx.xxx.xxx.xxx
 # 서버 접속
 ```
@@ -40,6 +41,10 @@ sudo apt update
 # nvm 설치
 sudo apt-get install build-essential libssl-dev
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# nvm 환경변수
+source .bashrc
+
 nvm install 14
 nvm use 14
 
@@ -78,6 +83,9 @@ express --view=ejs sample
 
 # express sample 실행하기
 cd sample
+
+# package.json 설치
+npm i 
 node ./bin/www
 
 # 확인
