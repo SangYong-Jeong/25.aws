@@ -170,7 +170,7 @@ flush privileges;
 create database book;
 
 -- book에 접근할 book사용자 생성
-GRANT privileges ON book.* TO 'book'@'%' identified by '패스워드';
+GRANT all privileges ON book.* TO 'book'@'%' identified by '패스워드';
 ```
 
 ## MySQL(MariaDB) 외부접속허용
